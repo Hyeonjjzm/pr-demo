@@ -1,0 +1,16 @@
+<script>
+    // 마우스가 클릭 좌표
+    window.onclick = function(e){
+        console.log("click", e.clientX, e.clientY);
+    }
+
+    // 마우스가 움직일때 좌표
+    window.onmousemove = function(e){
+        console.log("move", e.clientX, e.clientY);
+    }
+
+    // 위랑 똑같은데 function 안씀
+    window.onmousemove = (e) => {
+        console.log("move", e.clientX, e.clientY);
+    }
+</script>

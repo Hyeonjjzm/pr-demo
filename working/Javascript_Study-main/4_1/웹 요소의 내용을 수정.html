@@ -1,0 +1,116 @@
+<!-- innerHTML,innerText 써보기  -->
+<!-- <button onclick="inText()">innerText로 표시하기</button>
+<button onclick="inHTML()">innerText로 표시하기</button>
+<h1>현재 시각</h1>
+<div id="cur"></div>
+<script>
+    var now = new Date();
+    function inText(){
+                                                    // em써도 텍스트만 출력되서 em이 출력됨 
+        document.getElementById("cur").innerText = "<em>"+now+"</em>";
+    }
+    function inHTML(){
+        document.getElementById("cur").innerHTML = "<em>"+now+"</em>";
+    }
+</script> -->
+
+<!-- getAttribute 써보기 -->
+<!-- <div id="prePic">
+    <img src="..\4_1\피카츄.png" alt="피카츄" id="pikachu" width="200" height="200" onclick="displaySrc()">
+</div>
+<button id="change" onclick="changeSrc()">Click</button>
+<script>
+    var pika = document.querySelector("#pikachu");
+    function displaySrc(){
+        alert("이미지 소스 : "+pika.getAttribute("src"));
+    }
+    function changeSrc(){
+        pika.setAttribute("src","..\\4_1\\마자용.png")
+    }
+</script> -->
+
+<!-- DOM에서 이벤트 처리하기__함수 이름으로 연결 -->
+<!-- <div id="prePic">
+    <img src="..\4_1\피카츄.png" id="pikachu">
+</div>
+<script>
+    var pika = document.querySelector("#pikachu");
+    pika.onclick = changeSrc;
+    function changeSrc(){
+        pika.src = "..\\4_1\\마자용.png";
+    }
+</script> -->
+
+<!-- DOM에서 이벤트 처리하기__이미지 클릭위치 -->
+<!-- <div id="prePic">
+    <img src="..\4_1\피카츄.png" id="pikachu">
+</div>
+<script>
+    var pika = document.querySelector("#pikachu");
+    pika.onclick = function (event){
+        alert("이벤트 유형: "+event.type+", 이벤트 발생 위치: "+event.offsetX+" "+event.offsetY)
+    };
+</script> -->
+
+<!-- this 예약어 사용하기 -->
+<!-- <div id="prePic">
+    <img src="..\4_1\피카츄.png" id="pikachu">
+</div>
+<script>
+    var pika = document.querySelector("#pikachu");
+    pika.onclick = function (event){
+        alert("이미지 파일 : "+this.src)
+    };
+</script> -->
+
+<!-- addEventListener 예약어 사용하기 -->
+<!-- <div id="prePic">
+    <img src="..\4_1\피카츄.png" id="pikachu" width="500" height="400">
+</div>
+<script>
+    var pika = document.querySelector("#pikachu");
+    pika.addEventListener("mouseover", changePic);
+    pika.addEventListener("mouseout", originPic);
+    function changePic(){
+        pika.src = "..\\4_1\\피카츄.png";
+    }
+    function originPic(){
+        pika.src = "..\\4_1\\마자용.png";
+    }
+</script> -->
+
+<!-- addEventListener로 style 제어하기 -->
+<!-- <p>도형 위로 마우스 포인터를 올려놓으세요</p>
+<div id="rect"></div>
+<style>
+    #rect{
+        border-style: solid;
+        width: 200;
+        height: 200;
+    }
+</style>
+<script>
+    var myRect = document.querySelector("#rect");
+    myRect.addEventListener("mouseover", function(){
+        myRect.style.backgroundColor = "green";
+        myRect.style.borderRadius = "50%";
+    })
+    myRect.addEventListener("mouseout", function(){
+        myRect.style.backgroundColor = "";
+        myRect.style.borderRadius = "";
+    })
+</script> -->
+
+<!-- 노드 리스트 확인하기 -->
+<!-- <h1>Web Programming</h1>
+<ul id="itemList">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+</ul>
+<script>
+    console.log(
+        document.querySelectorAll("li")
+    )
+</script> -->
+

@@ -1,0 +1,71 @@
+<body>
+    <div class="row">
+        <ul>
+            <li><img src="img\개굴닌자.jpg" class="thumbnail"></li>
+            <li><img src="img\롱스톤.jpg" class="thumbnail"></li>
+            <li><img src="img\리자몽.jpg" class="thumbnail"></li>
+            <li><img src="img\마자용.png" class="thumbnail"></li>
+            <li><img src="img\이상해씨.jpg" class="thumbnail"></li>
+            <li><img src="img\피카츄.png" class="thumbnail"></li>
+        </ul>
+    </div>
+    <div id="lightbox">
+        <img src="img\개굴닌자.jpg" id="lightboxImg">
+    </div>
+</body>
+<script>
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var lightbox = document.querySelector('#lightbox');
+    var lightboxImg = document.querySelector('#lightboxImg');
+
+    for (let i=0; i<thumbnails.length; i++){
+        thumbnails[i].addEventListener("click",showLightbox);
+    }
+
+    function showLightbox(){
+        console.log("hi");
+        let bigLocation = this.getAttribute("src");
+        lightboxImg.setAttribute("src",bigLocation);
+        lightbox.style.display = "block";
+    }
+    lightbox.onclick = () => {
+        lightbox.style.display = "none";
+    }
+
+</script>
+<style>
+    .row{
+        width: 50vw;
+        margin: 0 auto;
+    }
+    .row ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .row ul li {
+        display: inline-table;
+        width: 30%;
+        margin-bottom: 0;
+    }
+    .row ul li img {
+        width: 100%;
+        height: auto;
+    }
+    #lightbox {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.575);
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    #lightboxImg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 5px solid white;
+    }
+</style>
